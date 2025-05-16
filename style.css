@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  top: 0;
+}
+
+#plateau {
+  display: flex;
+  height: auto;
+  padding: 40px;
+  width: 80%;
+  text-align: center;
+  background: bisque;
+  align-content: center;
+  justify-content: space-around;
+  justify-self: center;
+  border-radius: 5px;
+  flex-direction: column;
+  div {
+    align-self: center;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+.barreDeTache {
+  background: rgb(234, 234, 234);
+  margin: 5px;
+  border-radius: 5px;
+  width: 100%;
+  input{
+        width: 80%;
+    height: 35px;
+
+  }
+}
+
+.bouton {
+  border-radius: 5px;
+  background-color: brown;
+  justify-content: center;
+  color: gold;
+  width: 30%;
+}
