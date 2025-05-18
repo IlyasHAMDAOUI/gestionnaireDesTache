@@ -34,6 +34,17 @@
             // Pour mettre à jour l'affichage
             displayTasks();
         }
+
+        // a ameliorer 
+        function modifTask(index) {
+            const currentTask = tasks[index];
+
+            const replaceTask= prompt("Il est l'heure de modifier ton message: ");
+            tasks.replace(replaceTask, 1);
+            console.log(`Tâche à l'index ${index} modifiée`, tasks);
+            
+            displayTasks();
+        }
         
         // La Function pour afficher les tâches
         function displayTasks() {
@@ -52,12 +63,20 @@
                 // Pour le bouton de suppression
                 const deleteBtn = document.createElement('button');
                 deleteBtn.className = 'delete-btn';
-                deleteBtn.textContent = '-';
+                deleteBtn.textContent = 'supprimer';
                 deleteBtn.addEventListener('click', () => deleteTask(index));
                 
+                // Pour le bouton de suppression
+                const modif = document.createElement('modif');
+                modif.className = 'modif-btn';
+                modif.textContent = 'modifier';
+                modif.addEventListener('click', () => modifTask(index));
+                
+
                 // Pour ajouter des éléments à la carte
                 taskCard.appendChild(taskText);
                 taskCard.appendChild(deleteBtn);
+                taskCard.appendChild(modif);
                 
                 // Pour ajouter la carte à la liste
                 taskList.appendChild(taskCard);
