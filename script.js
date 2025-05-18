@@ -1,17 +1,52 @@
-const texte = document.getElementById("texte");
-const bouton = document.querySelector(`.bouton`);
+const taskInput = document.getElementById("taskInput");
+const addButton = document.getElementById("addButton");
+const taskList = document.getElementById("taskList");
 
-console.log(texte.value);
-let lancer= false;
-// let nouveauMessage = prompt();
+const tasks = [];
 
-let tasks = [];
+function addTask() {
 
-bouton.addEventListener("click", () => {
-    document.body.style.backgroundColor="red";
+  const taskText = taskInput.value.trim();
+
+  if (taskText !== "") {
+
+    // Ajouter la tâche au tableau
     
-});
+    tasks.push(taskText);
+    console.log(`Tâche ajoutée: "${taskText}"`, tasks);
 
-tasks.push(texte.value);
-console.log(bouton);
-console.log(tasks[0]);
+    // Mettre à jour l'affichage
+    displayTasks();
+
+    // Vider le champ de saisie
+    taskInput.value = "";
+  }
+}
+
+function displayTasks() {
+  // Vider la liste actuelle
+  taskList.innerHTML = "";
+
+  // Parcourir le tableau et créer les cartes
+  tasks.forEach((task) => {
+    const taskCard = document.createElement("div");
+    taskCard.setAttribute("class", "addBoutonStyle");
+    taskCard.className = "task-card";
+    taskCard.textContent = task;
+    const suppBouton = document.createElement("div");
+    suppBouton.setAttribute("class", "suppBoutonStyle");
+    suppBouton.className = "supp-Button";
+    
+    taskList.appendChild(taskCard);
+    suppBouton.appendChild(suppBouton);
+  });
+}
+
+addButton.addEventListener("click", addTask);
+
+// Écouteur d'événement pour la touche Entrée
+taskInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    addTask();
+  }
+});

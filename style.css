@@ -1,46 +1,78 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
-  top: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primaire: #71187d;
+}
+
+body {
+  color: var(--color-primaire);
 }
 
 #plateau {
   display: flex;
   height: auto;
   padding: 40px;
-  width: 80%;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  border: 2px solid var(--color-primaire);
+  backdrop-filter: blur(15px);
+
   text-align: center;
-  background: bisque;
   align-content: center;
   justify-content: space-around;
   justify-self: center;
   border-radius: 5px;
   flex-direction: column;
-  div {
-    align-self: center;
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    justify-self: center;
-    width: 100%;
-  }
 }
 
 .barreDeTache {
-  background: rgb(234, 234, 234);
-  margin: 5px;
-  border-radius: 5px;
-  width: 100%;
-  input{
-        width: 80%;
-    height: 35px;
-
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+#taskInput {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background: transparent;
+  border: 2px solid var(--color-primaire);
+  border-radius: 10px;
+  color: var(--color-primaire);
+  font-size: 10px;
+  margin-right: 10px;
 }
 
-.bouton {
+#taskInput {
+  color: rgb(211, 130, 23);
+}
+
+.addButton {
+  border: none;
+  outline: none;
+  background: var(--color-primaire);
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.task-card {
+  border: 1px solid black;
+  text-align: start;
+  padding-inline-start: 10px;
   border-radius: 5px;
-  background-color: brown;
-  justify-content: center;
-  color: gold;
-  width: 30%;
+}
+.supp-Button{
+    display: flex;
+    background: red;
+    border-radius: 10px;
 }

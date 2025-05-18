@@ -8,11 +8,15 @@
   </head>
   <body>
     <section id="plateau">
-      <h1>Gestionnaire des Tâches</h1>
-      <form class="barreDeTache" action="">
-        <input type="text" id="texte" value="Entrer votre tache."/>
-        <button class="bouton">Ajouter</button>
-      </form>
+        <h1>Barre de Tache</h1>
+        <div class="barreDeTache">
+
+            <input type="text" id="taskInput" placeholder="Entrez une nouvelle tâche...">
+            <button id="addButton">Ajouter</button>
+        </div>
+        
+        <div id="taskList">
+        </div>
     </section>
 
     <script src="script.js"></script>
