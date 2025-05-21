@@ -66,22 +66,21 @@ body {
 }
 
 .task-card {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
   border: 1px solid black;
   text-align: start;
   padding-inline-start: 10px;
   border-radius: 5px;
 }
 
-.delete-btn{
-        background: red;
-    width: 75px;
-    color: white;
-    border-radius: 20px;
+.delete-btn {
+  background: red;
+  width: 75px;
+  color: white;
+  border-radius: 20px;
 }
-.delete-btn:hover{
-    background: white;
-    color: red;
-
+.delete-btn:hover {
+  background: white;
+  color: red;
 }

@@ -10,7 +10,6 @@ function addTask() {
   const taskText = taskInput.value.trim();
 
   if (taskText !== "") {
-    // Pour ajouter la tâche au tableau
     tasks.push(taskText);
     console.log(`Tâche ajoutée: "${taskText}"`, tasks);
 
@@ -36,9 +35,10 @@ function deleteTask(index) {
 
 // a ameliorer, tout refaire depuis le debut sur la partie du bouton modifier.
 function modifTask(index) {
-  const currentTask = tasks[index];
-
-  const replaceTask = prompt("Il est l'heure de modifier ton message: ");
+  const replaceTask = prompt(
+    "Il est l'heure de modifier ton message: ",
+    tasks[index]
+  );
   tasks.replace(replaceTask, 1);
   console.log(`Tâche à l'index ${index} modifiée`, tasks);
 
@@ -90,3 +90,6 @@ taskInput.addEventListener("keypress", function (e) {
     addTask();
   }
 });
+
+
+
